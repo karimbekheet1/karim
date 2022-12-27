@@ -59,3 +59,33 @@ class Manager extends Employee {
     }
 }
 
+package task;
+
+
+    public class Main {
+        public static void main(String[] args) {
+            // Create an Employee object
+            Employee employee = new Employee("John Doe", "123456", "Accounting");
+
+            // Set the employee's name
+            employee.setName("Jane Doe");
+
+            // Print the employee's information
+            System.out.println("Employee name: " + employee.getName());
+            System.out.println("Employee ID: " + employee.getId());
+            System.out.println("Employee department: " + employee.getDepartment());
+
+            // Create a Manager object
+            Manager manager = new Manager("John Smith", "234567", "Marketing", "Director");
+
+            // Print the manager's information
+            System.out.println("\nManager name: " + manager.getName());
+            System.out.println("Manager ID: " + manager.getId());
+            System.out.println("Manager department: " + manager.getDepartment());
+            System.out.println("Manager title: " + manager.getTitle());
+        }
+    }
+
+
+
+
