@@ -88,4 +88,110 @@ package task;
 
 
 
+import java.util.Scanner;
+
+public class Employee {
+    // attributes
+    private String name;
+    private int age;
+    private int yearsOfExperience;
+    private Address address;
+    private Type type;
+    private int hoursOfWorking;
+    private int workingOnWeekends;
+
+    // nested class for address
+    class Address {
+        private String street;
+        private String city;
+        private String state;
+        private String zip;
+    }
+
+    // enum for employee types
+    public enum Type {
+        JUNIOR,
+        SENIOR,
+        LEAD
+    }
+
+    // constructor
+    public Employee(String name, int age, int yearsOfExperience, Address address, Type type, int hoursOfWorking, int workingOnWeekends) {
+        this.name = name;
+        this.age = age;
+        this.yearsOfExperience = yearsOfExperience;
+        this.address = address;
+        this.type = type;
+        this.hoursOfWorking = hoursOfWorking;
+        this.workingOnWeekends = workingOnWeekends;
+    }
+
+    // setters and getters
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setYearsOfExperience(int yearsOfExperience) {
+        this.yearsOfExperience = yearsOfExperience;
+    }
+    public int getYearsOfExperience() {
+        return yearsOfExperience;
+    }
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+    public Address getAddress() {
+        return address;
+    }
+    public void setType(Type type) {
+        this.type = type;
+    }
+    public Type getType() {
+        return type;
+    }
+    public void setHoursOfWorking(int hoursOfWorking) {
+        this.hoursOfWorking = hoursOfWorking;
+    }
+    public int getHoursOfWorking() {
+        return hoursOfWorking;
+    }
+    public void setWorkingOnWeekends(int workingOnWeekends) {
+        this.workingOnWeekends = workingOnWeekends;
+    }
+    public int getWorkingOnWeekends() {
+        return workingOnWeekends;
+    }
+
+    // method to calculate salary
+    public double calculateSalary() {
+        double salary = 0;
+        double baseRate = 8.0;
+        double overtimeRate = 1.5;
+
+        // base salary is hours of working * base rate
+        salary = hoursOfWorking * baseRate;
+
+        // overtime pay is overtime hours * overtime rate
+        double overtimePay = (hoursOfWorking - 40) * overtimeRate;
+        salary += overtimePay;
+
+        // weekend pay is working on weekends * base rate
+        double weekendPay = workingOnWeekends * baseRate;
+        salary += weekendPay;
+
+        // add bonus based on employee type
+        if (type == Type.JUNIOR) {
+            salary += 100;
+        } else if (type == Type.SENIOR) {
+            salary
+
+
 
