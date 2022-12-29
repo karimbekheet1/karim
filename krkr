@@ -195,3 +195,75 @@ public class Employee {
 
 
 
+
+
+package Employess_sys;
+
+public class Employee {
+    private String name;
+    private int id, age, exp, salary;
+    public enum Type {
+        JUNIOR,
+        SENIOR}
+
+     class Address {
+         private String city;
+         private String Area;
+     }
+
+    //constructor
+    public Employee(String name, int age,int id, Address address, Type type) {
+        this.id =id;
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.type = type;
+    }
+   // setters and getters
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public int getAge() {
+        return age;
+    }
+    
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+    public Address getAddress() {
+        return address;
+    }
+    public void setType(Type type) {
+        this.type = type;
+    }
+    public Type getType() {
+        return type;
+    }
+
+
+
+
+
+
+
+    public int calc_salary() {
+        return salary;
+
+    }
+
+    public int calc_raise() {
+
+        return salary * 10;
+    }
+
+
+}
+
+
